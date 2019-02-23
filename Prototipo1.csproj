@@ -307,8 +307,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AbilityTank.cs" />
+    <Compile Include="Assets\Scripts\AbilityUtility.cs" />
     <Compile Include="Assets\Scripts\AttackBase1.cs" />
     <Compile Include="Assets\Scripts\AttackBase2.cs" />
+    <Compile Include="Assets\Scripts\AttackBaseUtility.cs" />
     <Compile Include="Assets\Scripts\BaseGrid.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\GridConfigData.cs" />
@@ -317,6 +319,7 @@
     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\PositionTester.cs" />
     <Compile Include="Assets\Scripts\PositionTester2.cs" />
+    <Compile Include="Assets\Scripts\PositionUtility.cs" />
     <Compile Include="Assets\Scripts\TurnManager.cs" />
   </ItemGroup>
   <ItemGroup>

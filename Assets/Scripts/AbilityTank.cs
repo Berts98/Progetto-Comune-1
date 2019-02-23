@@ -44,42 +44,36 @@ public class AbilityTank : MonoBehaviour {
     public void SetAbility()
     {
         
-        //abilito abilita
+        //abilito abilità
         if (Input.GetKeyDown(abilityButton) && turn.isTurn == true && isAbility == false)
         {
-            //attivo abilità
+
             isAbility = true;
             //disabilito input controller per i movimenti(wasd)
             input.enabled = !input.enabled; 
          
         }else if(Input.GetKeyDown(abilityButton) && turn.isTurn == true && isAbility == true)
         {
-            //disattivo abilità
             isAbility = false;
             //riabilito input controller per i movimenti(wasd)
             input.enabled = true;
         }
 
     }
-    //scelgo direzione dove lanciare l'abilita
+    //scelgo direzione dove lanciare l'abilità
     public void SetDirectionAbility()
     {
         SetRange();
         //destra
         if (Input.GetKeyDown(KeyCode.D) && rangeHz >= -2 && isAbility == true)
         {
-            //cambia posizione
+           
             tester.x++;
             transform.position = grid.GetWorldPosition(tester.x, tester.y);
-            //risetto posizione x
             tester.maxRangeHzPlayer1 = tester.x;
-            //rifaccio calcolo range
             SetRange();
-            //sottraggo vita
-            lm.lifePlayer2 -= att;
-            //fine turno
+            lm.lifePlayer2 -= att;                  // fare if controllo unità nemica 
             turn.isTurn = false;
-            //disattivo abiltà
             isAbility = false;
             //riabilito input controller per i movimenti(wasd)
             input.enabled = true;
@@ -133,7 +127,6 @@ public class AbilityTank : MonoBehaviour {
     //set up range verticale e orrizontale per portata ability
     public void SetRange()
     {
-        //range = posizione player 1 - posizione player 2
         rangeHz = tester.maxRangeHzPlayer1 - tester2.maxRangeHzPlayer2;
         rangeVt = tester.maxRangeVtPlayer1 - tester2.maxRangeVtPlayer2;
     }

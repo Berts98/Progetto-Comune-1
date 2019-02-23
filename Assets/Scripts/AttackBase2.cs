@@ -11,6 +11,7 @@ public class AttackBase2 : MonoBehaviour {
     public PositionTester2 maxP2;
     public int RangeHz;
     public int RangeVt;
+    public PositionTester2 stun;
 
     // Use this for initialization
     void Start () {
@@ -26,7 +27,7 @@ public class AttackBase2 : MonoBehaviour {
     {
         RangeHz = maxP2.maxRangeHzPlayer2 - maxP1.maxRangeHzPlayer1;
         RangeVt = maxP2.maxRangeVtPlayer2 - maxP1.maxRangeVtPlayer1;
-        if (RangeHz <= 2 && RangeHz >= -2 || RangeVt <= 2 && RangeVt >=2)
+        if (RangeHz <= 2 && RangeHz >= -2 || RangeVt <= 2 && RangeVt >=2 && stun.isStun == false)
         {
             lm.lifeTank -= att;
             turn.isTurn = true;
