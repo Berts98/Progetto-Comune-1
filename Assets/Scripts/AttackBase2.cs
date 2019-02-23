@@ -6,7 +6,7 @@ using GridSystem;
 public class AttackBase2 : MonoBehaviour {
     public LifeManager lm;
     public TurnManager turn;
-    public float att = 50;
+    public int att = 5;
     public PositionTester maxP1;
     public PositionTester2 maxP2;
     public int RangeHz;
@@ -28,7 +28,7 @@ public class AttackBase2 : MonoBehaviour {
         RangeVt = maxP2.maxRangeVtPlayer2 - maxP1.maxRangeVtPlayer1;
         if (RangeHz <= 2 && RangeHz >= -2 || RangeVt <= 2 && RangeVt >=2)
         {
-            lm.lifePlayer1 -= att;
+            lm.lifeTank -= att;
             turn.isTurn = true;
             turn.ContRound += 1;
         }

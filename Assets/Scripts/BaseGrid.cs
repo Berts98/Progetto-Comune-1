@@ -27,7 +27,6 @@ namespace GridSystem
             // iterazione per la dimensione X della griglia
             for (int x = 0; x < configData.DimX; x++)
             {
-                //iterazione per la dimensione Y della griglia
                 for (int y = 0; y < configData.DimY; y++)
                 {
 

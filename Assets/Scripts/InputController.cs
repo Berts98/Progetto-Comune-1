@@ -9,12 +9,11 @@ public class InputController : MonoBehaviour {
     public KeyCode LeftButton;
     public KeyCode RightButton;
     public KeyCode PassButton;
-    public KeyCode AttackBaseButton;
-    public TurnManager turn;
+   
 
     void Start()
     {
-        turn = FindObjectOfType<TurnManager>();
+       
     }
 
     // Update is called once per frame
@@ -55,19 +54,6 @@ public class InputController : MonoBehaviour {
          
         }
 
-        if (Input.GetKeyDown(AttackBaseButton))
-        {
-            ///attacco base p1
-            if (turn.isTurn == true)
-            {
-                SendMessage("ToAttackBase1");
-            }
-
-            ///attaco base p2
-            else if (turn.isTurn == false)
-            {
-                SendMessage("ToAttackBase2");
-            }
-        }
+     
     }
 }

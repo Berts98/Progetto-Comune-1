@@ -4,15 +4,15 @@ using UnityEngine;
 using GridSystem;
 
 public class LifeManager : MonoBehaviour {
-
-    // set up vita giocatori
-    public float lifePlayer1 = 100;
-    public float lifePlayer2 = 100;
+    public int lifeTank;
+    public int lifePlayer2;
 
     // Use this for initialization
     void Start () {
-		
-	}
+
+          lifeTank = 20;
+          lifePlayer2 = 10;
+}
 	
 	// Update is called once per frame
 	void Update () {

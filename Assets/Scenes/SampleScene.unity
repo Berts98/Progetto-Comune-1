@@ -291,13 +291,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282840810}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.5268735, y: -0, z: -0, w: 0.84994376}
+  m_LocalPosition: {x: 8.4, y: 22.1, z: -1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 63.589005, y: 0, z: 0}
 --- !u!1 &346430880
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d26d1b474d5f5439fecdd6365aac57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePlayer1: 100
-  lifePlayer2: 100
+  lifeTank: 0
+  lifePlayer2: 0
 --- !u!4 &346430882
 Transform:
   m_ObjectHideFlags: 0
@@ -377,8 +377,6 @@ MonoBehaviour:
   LeftButton: 276
   RightButton: 275
   PassButton: 8
-  AttackBaseButton: 13
-  turn: {fileID: 0}
 --- !u!114 &1033766769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,8 +388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42073ea895dd4294197363bedf630a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 6
-  y: 6
+  x: 11
+  y: 5
   grid: {fileID: 148540512}
   turn: {fileID: 0}
   maxRangeHzPlayer2: 0
@@ -457,8 +455,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1033766767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.86032, y: -21.87016, z: 12.812756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 23.86032, y: 1, z: 12.812756}
+  m_LocalScale: {x: 0.5, y: 2, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -476,7 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lm: {fileID: 0}
   turn: {fileID: 0}
-  att: 50
+  att: 5
   maxP1: {fileID: 0}
   maxP2: {fileID: 0}
   RangeHz: 0
@@ -537,6 +535,7 @@ GameObject:
   - component: {fileID: 2060637816}
   - component: {fileID: 2060637815}
   - component: {fileID: 2060637821}
+  - component: {fileID: 2060637822}
   m_Layer: 0
   m_Name: Positiontester
   m_TagString: Untagged
@@ -560,8 +559,6 @@ MonoBehaviour:
   LeftButton: 97
   RightButton: 100
   PassButton: 9
-  AttackBaseButton: 32
-  turn: {fileID: 0}
 --- !u!114 &2060637816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,11 +571,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   x: 0
-  y: 0
+  y: 5
   grid: {fileID: 148540512}
   turn: {fileID: 0}
   maxRangeHzPlayer1: 0
   maxRangeVtPlayer1: 0
+  contMp: 0
 --- !u!135 &2060637817
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -640,8 +638,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2060637814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.86032, y: -21.87016, z: 12.812756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 23.86032, y: 1, z: 12.812756}
+  m_LocalScale: {x: 0.5, y: 2, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -659,8 +657,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lm: {fileID: 0}
   turn: {fileID: 0}
-  att: 50
-  maxP1: {fileID: 0}
-  maxP2: {fileID: 0}
+  att: 1
+  tester1: {fileID: 0}
+  tester2: {fileID: 0}
   RangeHz: 0
   RangeVt: 0
+  isAttack: 0
+  input: {fileID: 0}
+  attackButton: 32
+--- !u!114 &2060637822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060637814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9121abdf5ec3b14d98ae3d542a818e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  att: 3
+  tester: {fileID: 0}
+  grid: {fileID: 148540512}
+  abilityButton: 114
+  lm: {fileID: 0}
+  turn: {fileID: 0}
+  tester2: {fileID: 0}
+  x: 0
+  y: 0
+  rangeHz: 0
+  rangeVt: 0
+  isAbility: 0
+  input: {fileID: 0}

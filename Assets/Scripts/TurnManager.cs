@@ -4,8 +4,6 @@ using UnityEngine;
 using GridSystem;
 
 public class TurnManager : MonoBehaviour {
- 
-    //set up variabile turno e contatore round(opzionale)
     public bool isTurn;
     public int ContRound;
 

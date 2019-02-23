@@ -4,76 +4,83 @@ using UnityEngine;
 using GridSystem;
 
 public class PositionTester : MonoBehaviour {
-    public int x;
-    public int y;
+    public int x, y;
     public BaseGrid grid;
     public TurnManager turn;
     public int maxRangeHzPlayer1;
     public int maxRangeVtPlayer1;
+    public int contMp = 0;
+    
 
     public void Start()
     {
         turn = FindObjectOfType<TurnManager>();
-        transform.position = grid.GetWorldPosition(x, y);       
+        transform.position = grid.GetWorldPosition(x, y);
+        maxRangeHzPlayer1 = x;
+        maxRangeVtPlayer1 = y;
         turn.isTurn = true;
         
     }
 
 	public void GoToLeft()
     {
-        if (x > 0 && turn.isTurn == true)                           // controllo se non sono a bordo mappa + se è il mio turno 
+        if (x > 0 && turn.isTurn == true && contMp < 2)
         {
             x--;
-            transform.position = grid.GetWorldPosition(x, y);       // movimento player sinstra
-            turn.isTurn = false;                                    // fine turno
-            turn.ContRound += 1;                                    // incremento round (optional)
-            maxRangeHzPlayer1 = x;                                  // setto range orizzontale player 1
+            transform.position = grid.GetWorldPosition(x, y);
+            //turn.isTurn = false;
+            turn.ContRound += 1;
+            maxRangeHzPlayer1 = x;
+            contMp++;
             
         }
     }
 
     public void GoToRight()
     {
-        if (x < 9 && turn.isTurn == true)
+        if (x < 11 && turn.isTurn == true && contMp < 2)
         {
             x++;
             transform.position = grid.GetWorldPosition(x, y);
-            turn.isTurn = false;
+            //turn.isTurn = false;
             turn.ContRound += 1;
             maxRangeHzPlayer1 = x;
-           
+            contMp++;
         }
     }
 
     public void GoToDown()
     {
-        if (y > 0 && turn.isTurn == true)
+        if (y > 0 && turn.isTurn == true && contMp < 2)
         {
             y--;
             transform.position = grid.GetWorldPosition(x, y);
-            turn.isTurn = false;
+            //turn.isTurn = false;
             turn.ContRound += 1;
-            maxRangeVtPlayer1 = y;                                 //setto range verticale player 1
+            maxRangeVtPlayer1 = y;
+            contMp++;
         }
     }
 
     public void GoToUp()
     {
-        if (y < 9 && turn.isTurn == true)
+        if (y < 11 && turn.isTurn == true && contMp < 2)
         {
             y++;
             transform.position = grid.GetWorldPosition(x, y);
-            turn.isTurn = false;
+            //turn.isTurn = false;
             turn.ContRound += 1;
             maxRangeVtPlayer1 = y;
+            contMp++;
         }
     }
+
 
     public void ToPass()
     {
 
-        turn.isTurn = false;                                       //salto turno
-
+        turn.isTurn = false;
+        contMp = 0;
     }
 
 }
