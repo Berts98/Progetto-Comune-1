@@ -17,10 +17,10 @@ public class AbilityUtility : MonoBehaviour
     public int rangeHz;
     public int rangeVt;
     public bool isAbility;
-    public InputController input;
 
-    public int CountStun = 1;
-    public PositionTester2 stun;
+    public InputController input;
+    public int Counter = 0;
+    public bool isStun;
 
 
     // Use this for initialization
@@ -40,6 +40,7 @@ public class AbilityUtility : MonoBehaviour
     {
         SetAbility();
         SetDirectionAbility();
+        Stun();
     }
 
     public void SetAbility()
@@ -73,6 +74,8 @@ public class AbilityUtility : MonoBehaviour
             isAbility = false;
             //riabilito input controller per i movimenti(wasd)
             input.enabled = true;
+            isStun = true;
+
 
         }
         //sinistra
@@ -83,6 +86,7 @@ public class AbilityUtility : MonoBehaviour
             isAbility = false;
             //riabilito input controller per i movimenti(wasd)
             input.enabled = true;
+            isStun = true;
         }
         //sopra
         if (Input.GetKeyDown(KeyCode.W) && rangeVt >= -3 && isAbility == true)
@@ -92,6 +96,7 @@ public class AbilityUtility : MonoBehaviour
             isAbility = false;
             //riabilito input controller per i movimenti(wasd)
             input.enabled = true;
+            isStun = true;
         }
         //sotto
         if (Input.GetKeyDown(KeyCode.S) && rangeVt <= 3 && isAbility == true)
@@ -101,15 +106,21 @@ public class AbilityUtility : MonoBehaviour
             isAbility = false;
             //riabilito input controller per i movimenti(wasd)
             input.enabled = true;
+            isStun = true;
 
         }
     }
 
     public void Stun()
     {
-        if ()
+        if (isStun == true && Counter == 0 && turn.isTurn == true)
         {
-
+            Counter++;
+        }
+        else if (Counter >= 1 && turn.isTurn == false)
+        {
+            isStun = false;
+            Counter = 0;
         }
     }
 

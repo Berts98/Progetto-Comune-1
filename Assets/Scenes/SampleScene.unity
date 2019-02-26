@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 1033766768}
   - component: {fileID: 1033766769}
   - component: {fileID: 1033766774}
+  - component: {fileID: 1033766775}
   m_Layer: 0
   m_Name: Positiontester (1)
   m_TagString: Untagged
@@ -395,7 +396,7 @@ MonoBehaviour:
   turn: {fileID: 0}
   maxRangeHzPlayer2: 0
   maxRangeVtPlayer2: 0
-  isStun: 0
+  ability: {fileID: 0}
 --- !u!135 &1033766770
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -481,7 +482,33 @@ MonoBehaviour:
   maxP2: {fileID: 0}
   RangeHz: 0
   RangeVt: 0
-  stun: {fileID: 0}
+  ability: {fileID: 1033766775}
+--- !u!114 &1033766775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033766767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7038cc1f11492604ab3b657e03d31c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  att: 2
+  Utility1: {fileID: 0}
+  grid: {fileID: 0}
+  abilityButton: 0
+  lm: {fileID: 0}
+  turn: {fileID: 0}
+  Tester2: {fileID: 0}
+  x: 0
+  y: 0
+  rangeHz: 0
+  rangeVt: 0
+  isAbility: 0
+  input: {fileID: 0}
+  Counter: 0
+  isStun: 0
 --- !u!1 &1155766112
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +564,7 @@ GameObject:
   - component: {fileID: 1665715721}
   - component: {fileID: 1665715720}
   - component: {fileID: 1665715725}
+  - component: {fileID: 1665715726}
   - component: {fileID: 1665715719}
   m_Layer: 0
   m_Name: Utility1
@@ -667,6 +695,32 @@ MonoBehaviour:
   isAttack: 0
   input: {fileID: 0}
   attackButtonUtility: 32
+--- !u!114 &1665715726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1665715718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7038cc1f11492604ab3b657e03d31c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  att: 2
+  Utility1: {fileID: 0}
+  grid: {fileID: 0}
+  abilityButton: 0
+  lm: {fileID: 0}
+  turn: {fileID: 0}
+  Tester2: {fileID: 0}
+  x: 0
+  y: 0
+  rangeHz: 0
+  rangeVt: 0
+  isAbility: 0
+  input: {fileID: 0}
+  Counter: 0
+  isStun: 0
 --- !u!1 &2060637814
 GameObject:
   m_ObjectHideFlags: 0
