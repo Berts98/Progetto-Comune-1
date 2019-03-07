@@ -44,7 +44,7 @@ public class AbilityTank : MonoBehaviour {
     public void SetAbility()
     {
         
-        //abilito abilità
+        //abilito abilita
         if (Input.GetKeyDown(abilityButton) && turn.isTurn == true && isAbility == false)
         {
 
@@ -60,7 +60,7 @@ public class AbilityTank : MonoBehaviour {
         }
 
     }
-    //scelgo direzione dove lanciare l'abilità
+    //scelgo direzione dove lanciare l'abilita
     public void SetDirectionAbility()
     {
         SetRange();
@@ -72,7 +72,7 @@ public class AbilityTank : MonoBehaviour {
             transform.position = grid.GetWorldPosition(tester.x, tester.y);
             tester.maxRangeHzPlayer1 = tester.x;
             SetRange();
-            lm.lifePlayer2 -= att;                  // fare if controllo unità nemica 
+            lm.lifePlayer2 -= att;
             turn.isTurn = false;
             isAbility = false;
             //riabilito input controller per i movimenti(wasd)

@@ -11,12 +11,10 @@ public class PositionTester2 : MonoBehaviour {
     public TurnManager turn;
     public int maxRangeHzPlayer2;
     public int maxRangeVtPlayer2;
-    public AbilityUtility ability;
 
     public void Start()
     {
         turn = FindObjectOfType<TurnManager>();
-        ability = FindObjectOfType<AbilityUtility>();
         transform.position = grid.GetWorldPosition(x, y);
         maxRangeHzPlayer2 = x;
         maxRangeVtPlayer2 = y;
@@ -27,7 +25,7 @@ public class PositionTester2 : MonoBehaviour {
 
     public void GoToLeft()
     {
-        if (x > 0 && turn.isTurn == false && ability.isStun == false)
+        if (x > 0 && turn.isTurn == false)
         {
             x--;
             transform.position = grid.GetWorldPosition(x, y);
@@ -39,7 +37,7 @@ public class PositionTester2 : MonoBehaviour {
 
     public void GoToRight()
     {
-        if (x < 11 && turn.isTurn == false && ability.isStun == false)
+        if (x < 11 && turn.isTurn == false)
         {
             x++;
             transform.position = grid.GetWorldPosition(x, y);
@@ -51,7 +49,7 @@ public class PositionTester2 : MonoBehaviour {
 
     public void GoToDown()
     {
-        if (y > 0 && turn.isTurn == false && ability.isStun == false)
+        if (y > 0 && turn.isTurn == false)
         {
             y--;
             transform.position = grid.GetWorldPosition(x, y);
@@ -63,7 +61,7 @@ public class PositionTester2 : MonoBehaviour {
 
     public void GoToUp()
     {
-        if (y < 11 && turn.isTurn == false && ability.isStun == false)
+        if (y < 11 && turn.isTurn == false)
         {
             y++;
             transform.position = grid.GetWorldPosition(x, y);

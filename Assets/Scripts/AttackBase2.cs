@@ -4,7 +4,6 @@ using UnityEngine;
 using GridSystem;
 
 public class AttackBase2 : MonoBehaviour {
-
     public LifeManager lm;
     public TurnManager turn;
     public int att = 5;
@@ -12,12 +11,10 @@ public class AttackBase2 : MonoBehaviour {
     public PositionTester2 maxP2;
     public int RangeHz;
     public int RangeVt;
-    public AbilityUtility ability;
 
     // Use this for initialization
     void Start () {
 
-        ability = FindObjectOfType<AbilityUtility>();
         lm = FindObjectOfType<LifeManager>();
         turn = FindObjectOfType<TurnManager>();
         maxP1 = FindObjectOfType<PositionTester>();
@@ -29,7 +26,7 @@ public class AttackBase2 : MonoBehaviour {
     {
         RangeHz = maxP2.maxRangeHzPlayer2 - maxP1.maxRangeHzPlayer1;
         RangeVt = maxP2.maxRangeVtPlayer2 - maxP1.maxRangeVtPlayer1;
-        if (RangeHz <= 2 && RangeHz >= -2 || RangeVt <= 2 && RangeVt >=2 && ability.isStun == false)
+        if (RangeHz <= 2 && RangeHz >= -2 || RangeVt <= 2 && RangeVt >=2)
         {
             lm.lifeTank -= att;
             turn.isTurn = true;
