@@ -13,16 +13,18 @@ public class SelectionController : MonoBehaviour {
     public bool isActiveTank;
     public bool isActiveHealer;
     public TurnManager turn;
+    public HudManagerTest Text;
 
     void Start()
     {
+        Text = FindObjectOfType<HudManagerTest>();
         turn = FindObjectOfType<TurnManager>();
         tankP1 = FindObjectOfType<PositionTester>();
         healerP1 = FindObjectOfType<PositionHealer>();
         contSelectionP1 = 0;
         transform.position = grid.GetWorldPosition(x,y);
         gameObject.GetComponent<MeshRenderer>().enabled = false;
-        
+
 
     }
 
@@ -33,16 +35,17 @@ public class SelectionController : MonoBehaviour {
         if(turn.isTurn == false)
         {
             gameObject.GetComponent<MeshRenderer>().enabled = false;
+
         }
     }
 
     public void ContTankP1()
     {
        
-        transform.position = grid.GetWorldPosition(tankP1.x, tankP1.y);
+        transform.position = grid.GetWorldPosition(tankP1.x , tankP1.y);
         x = tankP1.x;
         y = tankP1.y;
-       
+        Text.unitP1.text = "Tank ";
     }
 
     public void ContHealerP1()
@@ -50,7 +53,7 @@ public class SelectionController : MonoBehaviour {
         transform.position = grid.GetWorldPosition(healerP1.x, healerP1.y);
         x = healerP1.x;
         y = healerP1.y;
-        
+        Text.unitP1.text = "healer ";
     }
 
     public void AddCont()
